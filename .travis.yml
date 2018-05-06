@@ -4,7 +4,7 @@ node_js:
 - '9'
 - '8'
 before_deploy:
-- npm version --no-git-tag-version --force $(npx semver -i minor $(npm info mdbg version))
+- npm version --no-git-tag-version --force $(npx semver -i minor $(npm info zhuyin version))
 deploy:
   provider: npm
   email: mail@pepebecker.com

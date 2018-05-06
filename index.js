@@ -23,6 +23,3 @@ const toPinyin = zhuyin => {
 module.exports = fromPinyin
 module.exports.fromPinyin = fromPinyin
 module.exports.toPinyin = toPinyin
-
-fromPinyin('wo3demao1xi3huanhe1niu2nai3')
-.then(console.log)
