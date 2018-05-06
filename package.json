@@ -1,0 +1,36 @@
+{
+  "name": "zhuyin",
+  "version": "1.0.0",
+  "description": "Convert Zhuyin to Pinyin",
+  "keywords": [
+    "chinese",
+    "mandarin",
+    "pinyin",
+    "zhuyin",
+    "中文",
+    "拼音",
+    "注音"
+  ],
+  "homepage": "https://github.com/pepebecker/zhuyin#readme",
+  "bugs": {
+    "url": "https://github.com/pepebecker/zhuyin/issues"
+  },
+  "license": "MIT",
+  "author": "Pepe Becker <mail@pepebecker.com> (http://pepebecker.com)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pepebecker/zhuyin.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "pinyin-split": "^1.0.8",
+    "pinyin-utils": "^1.0.8"
+  },
+  "devDependencies": {
+    "mocha": "^5.1.1",
+    "should": "^13.2.1"
+  }
+}
