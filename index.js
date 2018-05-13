@@ -12,11 +12,11 @@ const fromPinyin = (input, everything) => {
       if (everything) {
         if (typeof item === 'string') return item
         else {
-          let zh = py2zh[pinyinUtils.removeTone(item[0])]
+          let zh = py2zh[pinyinUtils.removeTone(item[0]).toLowerCase()]
           return [zh + zhuyinTones[pinyinUtils.getToneNumber(item[0]) - 1]]
         }
       } else {
-        let zh = py2zh[pinyinUtils.removeTone(item)]
+        let zh = py2zh[pinyinUtils.removeTone(item).toLowerCase()]
         return zh + zhuyinTones[pinyinUtils.getToneNumber(item) - 1]
       }
     })
