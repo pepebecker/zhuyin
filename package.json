@@ -26,11 +26,11 @@
     "test": "mocha"
   },
   "dependencies": {
-    "pinyin-split": "^1.2.0",
-    "pinyin-utils": "^1.0.8"
+    "pinyin-split": "^1.13.0",
+    "pinyin-utils": "^1.6.0"
   },
   "devDependencies": {
-    "mocha": "^5.1.1",
-    "should": "^13.2.1"
+    "mocha": "^5.2.0",
+    "should": "^13.2.3"
   }
 }
