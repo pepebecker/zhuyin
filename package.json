@@ -15,19 +15,19 @@
   "bugs": {
     "url": "https://github.com/pepebecker/zhuyin/issues"
   },
-  "license": "MIT",
-  "author": "Pepe Becker <mail@pepebecker.com> (http://pepebecker.com)",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/pepebecker/zhuyin.git"
   },
+  "license": "MIT",
+  "author": "Pepe Becker <mail@pepebecker.com> (http://pepebecker.com)",
+  "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
   "dependencies": {
-    "pinyin-split": "^1.13.0",
-    "pinyin-utils": "^1.6.0"
+    "pinyin-split": "^1.25.0",
+    "pinyin-utils": "^1.13.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
