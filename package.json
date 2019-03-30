@@ -26,7 +26,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "pinyin-split": "^1.27.0",
+    "pinyin-split": "^1.50.0",
     "pinyin-utils": "^1.14.0"
   },
   "devDependencies": {
