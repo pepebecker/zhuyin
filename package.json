@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "pinyin-split": "^1.27.0",
-    "pinyin-utils": "^1.14.0"
+    "pinyin-utils": "^1.45.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0",
