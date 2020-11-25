@@ -19,9 +19,9 @@
     "type": "git",
     "url": "https://github.com/pepebecker/zhuyin.git"
   },
-  "license": "MIT",
   "author": "Pepe Becker <mail@pepebecker.com> (http://pepebecker.com)",
   "main": "index.js",
+  "license": "ISC",
   "scripts": {
     "test": "mocha"
   },

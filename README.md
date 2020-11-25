@@ -5,7 +5,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/pepebecker/zhuyin.svg)](https://greenkeeper.io/)
 [![dependency status](https://img.shields.io/david/pepebecker/zhuyin.svg)](https://david-dm.org/pepebecker/zhuyin)
 [![dev dependency status](https://img.shields.io/david/dev/pepebecker/zhuyin.svg)](https://david-dm.org/pepebecker/zhuyin#info=devDependencies)
-[![MIT-licensed](https://img.shields.io/github/license/pepebecker/zhuyin.svg)](https://opensource.org/licenses/MIT)
+[![ISC-licensed](https://img.shields.io/github/license/pepebecker/zhuyin.svg)](https://choosealicense.com/licenses/isc/)
 [![chat on gitter](https://badges.gitter.im/pepebecker.svg)](https://gitter.im/pepebecker)
 
 ## Install
