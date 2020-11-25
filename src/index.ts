@@ -1,18 +1,16 @@
-'use strict'
+import { removeTone, getToneNumber, numberToMark } from 'pinyin-utils'
+import pinyinSplit from 'pinyin-split'
+import py2zy from './py2zy'
 
-const pinyinUtils = require('pinyin-utils')
-const pinyinSplit = require('pinyin-split')
-const py2zy = require('./py2zy')
+export const toneMarks = ["", "ˊ", "ˇ", "`", "˙"]
 
-const zhuyinTones = ["", "ˊ", "ˇ", "`", "˙"]
-
-const fromPinyinSyllable = pinyin => {
-  let zy = py2zy[pinyinUtils.removeTone(pinyin).toLowerCase()]
-  return zy + zhuyinTones[pinyinUtils.getToneNumber(pinyin) - 1]
+export const fromPinyinSyllable = (pinyin: string) => {
+  let zy = py2zy[removeTone(pinyin).toLowerCase()]
+  return zy + toneMarks[getToneNumber(pinyin) - 1]
 }
 
-const fromPinyin = (input, everything) => {
-  const translate = pinyin => {
+export const fromPinyin = (input: string | string[], everything = false) => {
+  const translate = (pinyin: string) => {
     return pinyinSplit(pinyin, everything).map(item => {
       if (everything) {
         if (typeof item === 'string') return item
@@ -28,7 +26,7 @@ const fromPinyin = (input, everything) => {
   else return input.map(translate)
 }
 
-const splitZhuyin = (zhuyin, everything) => {
+export const splitZhuyin = (zhuyin: string, everything = false) => {
   const list = []
   let index = 0
   while (index < zhuyin.length) {
@@ -39,7 +37,7 @@ const splitZhuyin = (zhuyin, everything) => {
       if (Object.values(py2zy).includes(word)) { // word found
         wordFound = true
 
-        if (zhuyinTones.includes(zhuyin[index + count])) { // tone found after word
+        if (toneMarks.includes(zhuyin[index + count])) { // tone found after word
           word += zhuyin[index + count]
           count ++
         }
@@ -64,8 +62,8 @@ const splitZhuyin = (zhuyin, everything) => {
   return list
 }
 
-const toPinyinSyllable = zhuyin => {
-  let tone = zhuyinTones.indexOf(zhuyin[zhuyin.length - 1]) + 1
+export const toPinyinSyllable = (zhuyin: string) => {
+  let tone = toneMarks.indexOf(zhuyin[zhuyin.length - 1]) + 1
   if (tone > 0) {
     zhuyin = zhuyin.substr(0, zhuyin.length - 1)
   } else {
@@ -79,7 +77,8 @@ const toPinyinSyllable = zhuyin => {
   }
 }
 
-const toPinyin = (zhuyin, opts = {}) => {
+type ToPinyinOptions = { everything?: boolean, numbered?: boolean }
+export const toPinyin = (zhuyin: string, opts: ToPinyinOptions = {}) => {
   let list = splitZhuyin(zhuyin, opts.everything)
   if (!opts.everything) list = list.filter(item => typeof item === 'string')
   list = list.map(item => {
@@ -87,15 +86,10 @@ const toPinyin = (zhuyin, opts = {}) => {
     else if (typeof item !== 'string') item = item[0]
     const pinyin = toPinyinSyllable(item)
     if (opts.numbered) return (opts.everything ? [pinyin] : pinyin)
-    else if (opts.everything) return [pinyinUtils.numberToMark(pinyin)]
-    else return pinyinUtils.numberToMark(pinyin)
+    else if (opts.everything) return [numberToMark(pinyin)]
+    else return numberToMark(pinyin)
   })
   return list
 }
 
-module.exports = fromPinyin
-module.exports.fromPinyinSyllable = fromPinyinSyllable
-module.exports.fromPinyin = fromPinyin
-module.exports.toPinyinSyllable = toPinyinSyllable
-module.exports.toPinyin = toPinyin
-module.exports.split = splitZhuyin
+export default fromPinyin

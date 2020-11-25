@@ -1,4 +1,4 @@
-{
+const py2zy: any = {
 	"a": "ㄚ",
 	"ai": "ㄞ",
 	"an": "ㄢ",
@@ -419,3 +419,5 @@
 	"zun": "ㄗㄨㄣ",
 	"zuo": "ㄗㄨㄛ"
 }
+
+export default py2zy
