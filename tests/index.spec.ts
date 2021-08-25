@@ -14,6 +14,11 @@ describe('Convert Pinyin to Zhuyin', () => {
 		expect(result.join(' ')).equal('ㄨㄛˇ ㄉㄜ˙ ㄇㄠ ㄒㄧˇ ㄏㄨㄢ˙ ㄏㄜ ㄋㄧㄡˊ ㄋㄞˊ')
 		done()
 	})
+	it('should convert Pinyin to Zhuyin', done => {
+		const result = fromPinyin('kǎolǜ')
+		expect(result.join(' ')).equal('ㄎㄠˇ ㄌㄩ`')
+		done()
+	})
 })
 
 describe('Convert Zhuyin to Pinyin', () => {
