@@ -17,19 +17,15 @@ npm install zhuyin
 ## Usage
 
 ```js
-const zhuyin = require('zhuyin')
+import { fromPinyin } from 'zhuyin'
 
-zhuyin('wǒ de māo xǐhuan hē níunǎi')
-.then(console.log)
+console.log(fromPinyin('wǒ de māo xǐhuan hē níunǎi'))
 
-zhuyin('wo3 de mao1 xi3huan he1niu2 nai3')
-.then(console.log)
+console.log(fromPinyin('wo3 de mao1 xi3huan he1niu2 nai3'))
 
-zhuyin('wǒdemāoxǐhuanhēníunǎi')
-.then(console.log)
+console.log(fromPinyin('wǒdemāoxǐhuanhēníunǎi'))
 
-zhuyin('wo3demao1xi3huanhe1niu2nai3')
-.then(console.log)
+console.log(fromPinyin('wo3demao1xi3huanhe1niu2nai3'))
 
 // [ 'ㄨㄛˇ', 'ㄉㄜ˙', 'ㄇㄠ', 'ㄒㄧˇ', 'ㄏㄨㄢ˙', 'ㄏㄜ', 'ㄋㄧㄡˊ', 'ㄋㄞˇ' ]
 ```
